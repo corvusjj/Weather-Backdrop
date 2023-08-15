@@ -25,6 +25,30 @@ body {
     object-fit: cover;
 }
 
+#menu {
+    position: absolute;
+    left: 110px;
+    top: 20px;
+    width: 60px;
+    height: auto;
+}
+
+#menu * {
+    pointer-events: none;
+}
+
+#menu > #SVGRepo_iconCarrier > path {
+    stroke: rgba(255, 255, 255, 0.8);
+}
+
+#menu:hover {
+    cursor: pointer;
+}
+
+#menu:hover #SVGRepo_iconCarrier > path {
+    stroke: #fff;
+}
+
 .weather-sidebar {
     position: absolute;
     background: rgba(0, 0, 0, 0.4);
@@ -124,6 +148,10 @@ body {
     margin-bottom: 30px;
     margin-top: 35px;
     color: #fff;
+}
+
+.weather-details {
+    user-select: none;
 }
 
 .weather-details ul {
