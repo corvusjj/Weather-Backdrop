@@ -9,7 +9,7 @@ async function fetchWeather(link) {
         }
 
         const weatherData = await response.json();
-        console.log(weatherData.location);
+        console.log(weatherData);
     } catch(err) {
         const errorData = await err.json();
         console.log(errorData.error.message);
