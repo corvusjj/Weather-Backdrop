@@ -1,3 +1,5 @@
+import { startLoading, endLoading } from "./interface";
+
 const history = ['London', 'Buenos Aires', 'Tokyo', 'Manila'];
 
 function updateHistory(city) {
@@ -22,11 +24,13 @@ function emptyInputError(city) {
     return false;
 }
 
-function searchCity(city) {
+async function searchCity(city) {
     if (emptyInputError(city)) return;
+    startLoading();
 
     const link = `http://api.weatherapi.com/v1/current.json?key=e3b1dd72d6964d4187050305230608&q=${city}&aqi=no`;
-    fetchWeather(link);
+    await fetchWeather(link)
+    .finally(() => endLoading());
 }
 
 async function fetchWeather(link) {
@@ -46,7 +50,6 @@ async function fetchWeather(link) {
     }
 }
 
-// fetchWeather(link).then(() => console.log('finished'))
-// .catch((errorData) => console.log(errorData));
-
 export { searchCity }
+
+//  implement display data / run temp conversion / pexels api
