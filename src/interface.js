@@ -5,6 +5,7 @@ const searchBtn = document.querySelector('#search');
 const dataContainer = document.querySelector('.data-container');
 const loadingContainer = document.querySelector('.loading-container');
 const pendingCity = document.querySelector('#pending-city');
+const historyList = document.querySelector('#search-history > ul');
 
 const eventHandlers = (() => {
 
@@ -25,8 +26,19 @@ function endLoading() {
     loadingContainer.style.display = 'none';
 }
 
+function updateHistoryInterface(history) {
+    historyList.innerHTML = '';
+
+    history.forEach(city => {
+        const li = document.createElement('li');
+        li.textContent = city;
+        historyList.appendChild(li);
+    });
+}
+
 export { 
     eventHandlers, 
     startLoading,
-    endLoading
+    endLoading,
+    updateHistoryInterface
 }

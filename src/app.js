@@ -1,8 +1,11 @@
-import { startLoading, endLoading } from "./interface";
+import { startLoading, endLoading, updateHistoryInterface } from "./interface";
 
 const history = ['London', 'Buenos Aires', 'Tokyo', 'Manila'];
+let activeData;
 
-function updateHistory(city) {
+function updateHistory() {
+    const city = activeData.location.name;
+
     if(history.includes(city)) {
         const index = history.indexOf(city);
         history.splice(index, 1);
@@ -10,7 +13,8 @@ function updateHistory(city) {
         history.pop();
     }
 
-    history.push(city);
+    history.unshift(city);
+    updateHistoryInterface(history);
 }
 
 function emptyInputError(city) {
@@ -30,7 +34,13 @@ async function searchCity(city) {
 
     const link = `http://api.weatherapi.com/v1/current.json?key=e3b1dd72d6964d4187050305230608&q=${city}&aqi=no`;
     await fetchWeather(link)
-    .finally(() => endLoading());
+    .then(() => {
+        updateHistory();
+    })
+
+    .finally(() => {
+        endLoading();
+    });
 }
 
 async function fetchWeather(link) {
@@ -42,7 +52,8 @@ async function fetchWeather(link) {
         }
 
         const weatherData = await response.json();
-        console.log(weatherData);
+        activeData = weatherData;
+        // console.log(weatherData);
     } catch(err) {
         const errorData = await err.json();
         console.log(errorData.error.message);
