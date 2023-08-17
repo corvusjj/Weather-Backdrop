@@ -61,7 +61,7 @@ body {
     overflow-y: scroll;
 }
 
-#search {
+.search {
     width: 70px;
     height: 70px;
     position: absolute;
@@ -75,23 +75,26 @@ body {
     outline: none;
     z-index: 99;
     opacity: 0.9;
+    cursor: pointer;
 }
 
-#search svg {
+.search svg {
     width: 25px;
     height: 25px;
     pointer-events: none;
 }
 
-#search:hover {
-    cursor: pointer;
+.search:hover {
     opacity: 1;
+}
+
+.inactive {
+    cursor: progress;
 }
 
 .data-container {
     position: relative;
     top: 29px;
-    /* display: none; */
 }
 
 .loading-container {
