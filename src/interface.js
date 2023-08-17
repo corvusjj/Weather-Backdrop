@@ -90,7 +90,7 @@ function displaySidebarData() {
     cloudPercentage.textContent = dataCurrent.cloud + '%';
     humidityPercentage.textContent = dataCurrent.humidity + '%';
     windSpeed.textContent = dataCurrent.wind_kph + 'km/h';
-    
+
     country.textContent = dataLocation.country;
     region.textContent = dataLocation.region;
     latitude.textContent = dataLocation.lat;
@@ -109,6 +109,10 @@ function displayData(weatherData) {
     displaySidebarData();
 }
 
+function resetInput() {
+    inputCity.value = '';
+}
+
 const eventHandlers = (() => {
 
     searchBtn.addEventListener('click', () => {
@@ -122,5 +126,6 @@ export {
     startLoading,
     endLoading,
     updateHistoryInterface,
-    displayData
+    displayData,
+    resetInput
 }

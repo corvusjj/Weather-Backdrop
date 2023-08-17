@@ -1,4 +1,4 @@
-import { startLoading, endLoading, updateHistoryInterface, displayData } from "./interface";
+import { startLoading, endLoading, updateHistoryInterface, displayData, resetInput } from "./interface";
 
 const history = ['London', 'Buenos Aires', 'Tokyo', 'Manila'];
 let activeData;
@@ -34,9 +34,11 @@ async function searchCity(city) {
 
     const link = `http://api.weatherapi.com/v1/current.json?key=e3b1dd72d6964d4187050305230608&q=${city}&aqi=no`;
     await fetchWeather(link)
+    
     .then(() => {
         updateHistory();
         displayData(activeData);
+        resetInput();
     })
 
     .finally(() => {
