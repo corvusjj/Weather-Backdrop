@@ -1,4 +1,5 @@
 import { searchCity } from './app';
+import { format } from 'date-fns';
 
 const inputCity = document.querySelector('#input-city');
 const searchBtn = document.querySelector('#search');
@@ -59,7 +60,14 @@ function displayWeatherIcon() {
 }
 
 function displayDate() {
-    // set date function
+    const [dateData, timeData] = dataLocation.localtime.split(' ');
+    const localDate = new Date(dateData);
+    const dayName = format(localDate, 'EEEE');
+    const formattedDate = format(localDate, 'dd MMM') + ' \'' + format(localDate, 'yy');
+
+    time.textContent = timeData + ' - ';
+    day.textContent = dayName + ',';
+    date.textContent = formattedDate;
 }
 
 function displayCondition() {
@@ -72,10 +80,8 @@ function displayData(weatherData) {
     displayTemperature();
     displayLocation();
     displayWeatherIcon();
-    // displayDate();
+    displayDate();
     displayCondition();
-
-    condition.textContent = weatherData.current.condition.text;
 }
 
 const eventHandlers = (() => {
