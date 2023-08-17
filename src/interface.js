@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 
 const inputCity = document.querySelector('#input-city');
 const searchBtn = document.querySelector('#search');
+const errorMessage = document.querySelector('#error-message');
 const dataContainer = document.querySelector('.data-container');
 const loadingContainer = document.querySelector('.loading-container');
 const pendingCity = document.querySelector('#pending-city');
@@ -117,6 +118,14 @@ function resetInput() {
     inputCity.value = '';
 }
 
+function displayError(error) {
+    errorMessage.textContent = error;
+}
+
+function removeError() {
+    errorMessage.textContent = '';
+}
+
 const eventHandlers = (() => {
 
     searchBtn.addEventListener('click', (e) => {
@@ -132,5 +141,7 @@ export {
     endLoading,
     updateHistoryInterface,
     displayData,
-    resetInput
+    resetInput,
+    displayError,
+    removeError
 }

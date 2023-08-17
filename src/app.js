@@ -1,4 +1,12 @@
-import { startLoading, endLoading, updateHistoryInterface, displayData, resetInput } from "./interface";
+import { 
+    startLoading, 
+    endLoading, 
+    updateHistoryInterface, 
+    displayData, 
+    resetInput, 
+    displayError, 
+    removeError 
+} from "./interface";
 
 const history = ['London', 'Buenos Aires', 'Tokyo', 'Manila'];
 let activeData;
@@ -21,7 +29,7 @@ function emptyInputError(city) {
     const onlySpaces = /^ +$/;
 
     if (city.length === 0 || onlySpaces.test(city)) {
-        console.log('Please input a city');
+        displayError('Please input a city / location.');
         return true;
     }
     
@@ -34,12 +42,16 @@ async function searchCity(city) {
 
     const link = `http://api.weatherapi.com/v1/current.json?key=e3b1dd72d6964d4187050305230608&q=${city}&aqi=no`;
     await fetchWeather(link)
-    
+
     .then(() => {
         updateHistory();
         displayData(activeData);
+
         resetInput();
+        removeError();
     })
+
+    .catch((errorData) => displayError(errorData.error.message))
 
     .finally(() => {
         endLoading();
@@ -59,11 +71,11 @@ async function fetchWeather(link) {
         // console.log(weatherData);
     } catch(err) {
         const errorData = await err.json();
-        console.log(errorData.error.message);
+        console.log(errorData);
         throw errorData;
     }
 }
 
 export { searchCity }
 
-//  handlerInactive / resetInput / handleError / pexels api /
+// pexels api 
