@@ -38,7 +38,9 @@ function emptyInputError(city) {
 
 async function searchCity(city) {
     if (emptyInputError(city)) return;
+
     startLoading();
+    removeError();
 
     const link = `http://api.weatherapi.com/v1/current.json?key=e3b1dd72d6964d4187050305230608&q=${city}&aqi=no`;
     await fetchWeather(link)
@@ -46,9 +48,7 @@ async function searchCity(city) {
     .then(() => {
         updateHistory();
         displayData(activeData);
-
         resetInput();
-        removeError();
     })
 
     .catch((errorData) => displayError(errorData.error.message))
@@ -68,7 +68,7 @@ async function fetchWeather(link) {
 
         const weatherData = await response.json();
         activeData = weatherData;
-        // console.log(weatherData);
+        
     } catch(err) {
         const errorData = await err.json();
         console.log(errorData);

@@ -104,7 +104,7 @@ function displaySidebarData() {
 
 function displayData(weatherData) {
     ({current:dataCurrent, location:dataLocation} = weatherData);
-    console.log(weatherData);
+
     displayTemperature();
     displayLocation();
     displayWeatherIcon();
@@ -131,6 +131,12 @@ const eventHandlers = (() => {
     searchBtn.addEventListener('click', (e) => {
         if (e.target.classList.contains('inactive')) return;
         searchCity(inputCity.value);
+    });
+
+    inputCity.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            searchCity(inputCity.value);
+        }
     });
     
 })();
