@@ -30,11 +30,15 @@ function startLoading() {
     dataContainer.style.display = 'none';
     loadingContainer.style.display = 'block';
     pendingCity.textContent = inputCity.value;
+
+    searchBtn.classList.add('inactive');
 }
 
 function endLoading() {
     dataContainer.style.display = 'block';
     loadingContainer.style.display = 'none';
+
+    searchBtn.classList.remove('inactive');
 }
 
 function updateHistoryInterface(history) {
@@ -115,7 +119,8 @@ function resetInput() {
 
 const eventHandlers = (() => {
 
-    searchBtn.addEventListener('click', () => {
+    searchBtn.addEventListener('click', (e) => {
+        if (e.target.classList.contains('inactive')) return;
         searchCity(inputCity.value);
     });
     
