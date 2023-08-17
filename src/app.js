@@ -1,4 +1,4 @@
-import { startLoading, endLoading, updateHistoryInterface } from "./interface";
+import { startLoading, endLoading, updateHistoryInterface, displayData } from "./interface";
 
 const history = ['London', 'Buenos Aires', 'Tokyo', 'Manila'];
 let activeData;
@@ -36,6 +36,7 @@ async function searchCity(city) {
     await fetchWeather(link)
     .then(() => {
         updateHistory();
+        displayData(activeData);
     })
 
     .finally(() => {
@@ -63,4 +64,4 @@ async function fetchWeather(link) {
 
 export { searchCity }
 
-//  implement display data / run temp conversion / pexels api
+//  implement display data / update feelsLike conversion / pexels api

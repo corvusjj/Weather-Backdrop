@@ -7,13 +7,13 @@ const loadingContainer = document.querySelector('.loading-container');
 const pendingCity = document.querySelector('#pending-city');
 const historyList = document.querySelector('#search-history > ul');
 
-const eventHandlers = (() => {
-
-    searchBtn.addEventListener('click', () => {
-        searchCity(inputCity.value);
-    });
-    
-})();
+const temperature = document.querySelector('#temperature');
+const city = document.querySelector('#city');
+const weatherIcon = document.querySelector('#weather-icon');
+const time = document.querySelector('#time');
+const day = document.querySelector('#day');
+const date = document.querySelector('#date');
+const condition = document.querySelector('#condition');
 
 function startLoading() {
     dataContainer.style.display = 'none';
@@ -36,9 +36,60 @@ function updateHistoryInterface(history) {
     });
 }
 
+let temp = 'celsius';
+let dataCurrent;
+let dataLocation;
+
+function setTemperature() {
+    // set changeTemp function
+}
+
+function displayTemperature() {
+    if (temp === 'celsius') {
+        temperature.textContent = dataCurrent.temp_c + '°';
+    }
+}
+
+function displayLocation() {
+    city.textContent = dataLocation.name;
+}
+
+function displayWeatherIcon() {
+    weatherIcon.setAttribute('src', dataCurrent.condition.icon);
+}
+
+function displayDate() {
+    // set date function
+}
+
+function displayCondition() {
+    condition.textContent = dataCurrent.condition.text;
+}
+
+function displayData(weatherData) {
+    ({current:dataCurrent, location:dataLocation} = weatherData);
+
+    displayTemperature();
+    displayLocation();
+    displayWeatherIcon();
+    // displayDate();
+    displayCondition();
+
+    condition.textContent = weatherData.current.condition.text;
+}
+
+const eventHandlers = (() => {
+
+    searchBtn.addEventListener('click', () => {
+        searchCity(inputCity.value);
+    });
+    
+})();
+
 export { 
     eventHandlers, 
     startLoading,
     endLoading,
-    updateHistoryInterface
+    updateHistoryInterface,
+    displayData
 }
