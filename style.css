@@ -196,6 +196,10 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.weather-details ul li p:first-of-type {
+    max-width: 9rem;
+}
+
 .weather-details ul li p:nth-of-type(2) {
     max-width: 9rem;
     text-align: end;
