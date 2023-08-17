@@ -64,4 +64,4 @@ async function fetchWeather(link) {
 
 export { searchCity }
 
-//  implement display data / update feelsLike conversion / pexels api /
+//  handlerInactive / resetInput / handleError / pexels api /

@@ -16,6 +16,16 @@ const day = document.querySelector('#day');
 const date = document.querySelector('#date');
 const condition = document.querySelector('#condition');
 
+const dataCondition = document.querySelector('#data-condition');
+const cloudPercentage = document.querySelector('#cloud-percentage');
+const humidityPercentage = document.querySelector('#humidity-percentage');
+const windSpeed = document.querySelector('#wind-speed');
+const feelsLike = document.querySelector('#feels-like');
+const country = document.querySelector('#country');
+const region = document.querySelector('#region');
+const latitude = document.querySelector('#lat');
+const longitude = document.querySelector('#lon');
+
 function startLoading() {
     dataContainer.style.display = 'none';
     loadingContainer.style.display = 'block';
@@ -48,6 +58,7 @@ function setTemperature() {
 function displayTemperature() {
     if (temp === 'celsius') {
         temperature.textContent = dataCurrent.temp_c + '°';
+        feelsLike.textContent = dataCurrent.feelslike_c + '°';
     }
 }
 
@@ -72,16 +83,30 @@ function displayDate() {
 
 function displayCondition() {
     condition.textContent = dataCurrent.condition.text;
+    dataCondition.textContent = dataCurrent.condition.text;
+}
+
+function displaySidebarData() {
+    cloudPercentage.textContent = dataCurrent.cloud + '%';
+    humidityPercentage.textContent = dataCurrent.humidity + '%';
+    windSpeed.textContent = dataCurrent.wind_kph + 'km/h';
+    
+    country.textContent = dataLocation.country;
+    region.textContent = dataLocation.region;
+    latitude.textContent = dataLocation.lat;
+    longitude.textContent = dataLocation.lon;
 }
 
 function displayData(weatherData) {
     ({current:dataCurrent, location:dataLocation} = weatherData);
-
+    console.log(weatherData);
     displayTemperature();
     displayLocation();
     displayWeatherIcon();
     displayDate();
     displayCondition();
+
+    displaySidebarData();
 }
 
 const eventHandlers = (() => {
