@@ -128,13 +128,14 @@ function removeError() {
 
 const eventHandlers = (() => {
 
-    searchBtn.addEventListener('click', (e) => {
-        if (e.target.classList.contains('inactive')) return;
+    searchBtn.addEventListener('click', () => {
+        if (searchBtn.classList.contains('inactive')) return;
         searchCity(inputCity.value);
     });
 
     inputCity.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
+            if (searchBtn.classList.contains('inactive')) return;
             searchCity(inputCity.value);
         }
     });

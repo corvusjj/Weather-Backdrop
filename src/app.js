@@ -68,6 +68,7 @@ async function fetchWeather(link) {
 
         const weatherData = await response.json();
         activeData = weatherData;
+        console.log(activeData);
         
     } catch(err) {
         const errorData = await err.json();
@@ -78,4 +79,4 @@ async function fetchWeather(link) {
 
 export { searchCity }
 
-// pexels api 
+// pexels api /  display photos / temp conversion / animal/weather toggling function
