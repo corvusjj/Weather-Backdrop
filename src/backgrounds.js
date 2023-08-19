@@ -30,10 +30,10 @@ const backgrounds = [
         },
         night: {
             src: '/../dist/images/N-cloudy.jpg',
-            alt: 'Free Stars And Clouds at Nighttime Stock Photo',
+            alt: 'Free Moonlight on a Dark Sky Stock Photo',
             ref: [
-                'Arnie Chou',
-                'https://www.pexels.com/photo/stars-and-clouds-at-nighttime-1229042/'
+                'Roberto Nickson',
+                'https://www.pexels.com/photo/moonlight-on-a-dark-sky-2885320/'
             ]
         }
     },
@@ -49,10 +49,10 @@ const backgrounds = [
         },
         night: {
             src: '/../dist/images/N-cloudy.jpg',
-            alt: 'Free Stars And Clouds at Nighttime Stock Photo',
+            alt: 'Free Moonlight on a Dark Sky Stock Photo',
             ref: [
-                'Arnie Chou',
-                'https://www.pexels.com/photo/stars-and-clouds-at-nighttime-1229042/'
+                'Roberto Nickson',
+                'https://www.pexels.com/photo/moonlight-on-a-dark-sky-2885320/'
             ]
         }
     },
@@ -68,10 +68,10 @@ const backgrounds = [
         },
         night: {
             src: '/../dist/images/N-overcast.jpg',
-            alt: 'Free White Houses Near Sea Cliff Stock Photo',
+            alt: 'Free Ship at Night Stock Photo',
             ref: [
-                'Pixabay',
-                'https://www.pexels.com/photo/sea-sunset-water-rocks-60015/'
+                'Plato Terentev',
+                'https://www.pexels.com/photo/ship-at-night-6339764/'
             ]
         }
     },
@@ -124,11 +124,11 @@ const backgrounds = [
             ]
         },
         night: {
-            src: '/../dist/images/N-light-rain.jpg',
-            alt: 'Free Bokeh With Rain Drops on Glass Stock Photo',
+            src: '/../dist/images/light-rain.jpg',
+            alt: 'Free Raindrops Running Down the Window Stock Photo',
             ref: [
-                'Bob Clark',
-                'https://www.pexels.com/photo/bokeh-photography-21492/'
+                'DaryaGrey_Owl',
+                'https://www.pexels.com/photo/raindrops-running-down-the-window-16295359/'
             ]
         }
     },
