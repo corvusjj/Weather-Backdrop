@@ -5,7 +5,8 @@ import {
     displayData, 
     resetInput, 
     displayError, 
-    removeError 
+    removeError,
+    displayBackground 
 } from "./interface";
 
 const history = ['London', 'Buenos Aires', 'Tokyo', 'Manila'];
@@ -49,6 +50,8 @@ async function searchCity(city) {
         updateHistory();
         displayData(activeData);
         resetInput();
+
+        displayBackground();
     })
 
     .catch((errorData) => displayError(errorData.error.message))
@@ -68,8 +71,7 @@ async function fetchWeather(link) {
 
         const weatherData = await response.json();
         activeData = weatherData;
-        console.log(activeData);
-        
+
     } catch(err) {
         const errorData = await err.json();
         console.log(errorData);
@@ -79,4 +81,4 @@ async function fetchWeather(link) {
 
 export { searchCity }
 
-// pexels api /  display photos / temp conversion / animal/weather toggling function
+// pexels api / weatherTheme / display photos / temp conversion / animal/weather toggling function

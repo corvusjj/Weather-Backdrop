@@ -1,5 +1,6 @@
 import { searchCity } from './app';
 import { format } from 'date-fns';
+import { backgrounds } from './backgrounds';
 
 const inputCity = document.querySelector('#input-city');
 const searchBtn = document.querySelector('#search');
@@ -9,6 +10,7 @@ const loadingContainer = document.querySelector('.loading-container');
 const pendingCity = document.querySelector('#pending-city');
 const historyList = document.querySelector('#search-history > ul');
 
+const backgroundImg = document.querySelector('.background > img');
 const temperature = document.querySelector('#temperature');
 const city = document.querySelector('#city');
 const weatherIcon = document.querySelector('#weather-icon');
@@ -126,6 +128,14 @@ function removeError() {
     errorMessage.textContent = '';
 }
 
+function displayBackground() {    
+    const weatherCode = dataCurrent.condition.code.toString();
+    const imageData = backgrounds.find(data => data.code.includes(weatherCode));
+
+    backgroundImg.src = imageData.day.src;
+    backgroundImg.alt = imageData.day.alt;
+}
+
 const eventHandlers = (() => {
 
     searchBtn.addEventListener('click', () => {
@@ -150,5 +160,6 @@ export {
     displayData,
     resetInput,
     displayError,
-    removeError
+    removeError,
+    displayBackground
 }

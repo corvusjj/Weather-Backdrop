@@ -8,6 +8,14 @@ const backgrounds = [
                 'Dianne',
                 'https://www.pexels.com/photo/blue-yellow-and-green-hot-air-balloon-233146/'
             ]
+        },
+        night: {
+            src: '/../dist/images/clear.jpg',
+            alt: 'Free Starry Night Stock Photo',
+            ref: [
+                'Tsvetoslav Hristov',
+                'https://www.pexels.com/photo/starry-night-2500220/'
+            ]
         }
     },
     {
@@ -143,3 +151,5 @@ const backgrounds = [
         }
     }
 ];
+
+export { backgrounds }
