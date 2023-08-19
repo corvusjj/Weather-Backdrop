@@ -136,9 +136,19 @@ function displayBackground() {
     if (dataCurrent.is_day === 1) {
         backgroundImg.src = imageData.day.src;
         backgroundImg.alt = imageData.day.alt;
+        setTheme('day', imageData);
     } else {
         backgroundImg.src = imageData.night.src;
         backgroundImg.alt = imageData.night.alt;
+        setTheme('night', imageData);
+    }
+}
+
+function setTheme(time, imageData) {
+    if (time === 'day') {
+        searchBtn.style.background = imageData.day.theme;
+    } else {
+        searchBtn.style.background = imageData.night.theme;
     }
 }
 

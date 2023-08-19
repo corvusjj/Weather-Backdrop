@@ -7,7 +7,8 @@ const backgrounds = [
             ref: [
                 'Dianne',
                 'https://www.pexels.com/photo/blue-yellow-and-green-hot-air-balloon-233146/'
-            ]
+            ],
+            theme: '#7fa7d4'
         },
         night: {
             src: '/../dist/images/clear.jpg',
@@ -15,7 +16,8 @@ const backgrounds = [
             ref: [
                 'Tsvetoslav Hristov',
                 'https://www.pexels.com/photo/starry-night-2500220/'
-            ]
+            ],
+            theme: '#8a9b8a'
         }
     },
     {
@@ -26,7 +28,8 @@ const backgrounds = [
             ref: [
                 'Gilberto Olimpio',
                 'https://www.pexels.com/photo/man-paragliding-over-the-sea-5036747/'
-            ]
+            ],
+            theme: '#c4c2c9'
         },
         night: {
             src: '/../dist/images/N-cloudy.jpg',
@@ -34,7 +37,8 @@ const backgrounds = [
             ref: [
                 'Roberto Nickson',
                 'https://www.pexels.com/photo/moonlight-on-a-dark-sky-2885320/'
-            ]
+            ],
+            theme: '#298bc0'
         }
     },
     {
@@ -45,7 +49,8 @@ const backgrounds = [
             ref: [
                 'NastyaSensei',
                 'https://www.pexels.com/photo/sea-sky-sunset-clouds-1069480/'
-            ]
+            ],
+            theme: '#cab3c0'
         },
         night: {
             src: '/../dist/images/N-cloudy.jpg',
@@ -53,7 +58,8 @@ const backgrounds = [
             ref: [
                 'Roberto Nickson',
                 'https://www.pexels.com/photo/moonlight-on-a-dark-sky-2885320/'
-            ]
+            ],
+            theme: '#298bc0'
         }
     },
     {
@@ -64,7 +70,8 @@ const backgrounds = [
             ref: [
                 'Marina Leonova',
                 'https://www.pexels.com/photo/brown-grass-field-under-white-sky-8624442/'
-            ]
+            ],
+            theme: '#cca594'
         },
         night: {
             src: '/../dist/images/N-overcast.jpg',
@@ -72,7 +79,8 @@ const backgrounds = [
             ref: [
                 'Plato Terentev',
                 'https://www.pexels.com/photo/ship-at-night-6339764/'
-            ]
+            ],
+            theme: '#c0baba'
         }
     },
     {
@@ -83,7 +91,8 @@ const backgrounds = [
             ref: [
                 'Helena Lopes',
                 'https://www.pexels.com/photo/cars-riding-along-asphalt-road-towards-tunnel-on-gloomy-weather-4409445/'
-            ]
+            ],
+            theme: '#91b3ab'
         },
         night: {
             src: '/../dist/images/N-fog.jpg',
@@ -91,7 +100,8 @@ const backgrounds = [
             ref: [
                 'Nazila Azimzada',
                 'https://www.pexels.com/photo/silhouette-of-a-man-walking-on-a-foggy-street-at-night-15897185/'
-            ]
+            ],
+            theme: '#9f9caa'
         }
     },
     {
@@ -102,7 +112,8 @@ const backgrounds = [
             ref: [
                 'Christian Salwa',
                 'https://www.pexels.com/photo/fields-flare-sky-spring-1064472/'
-            ]
+            ],
+            theme: '#bb8fbb'
         },
         night: {
             src: '/../dist/images/N-patchy-rain.jpg',
@@ -110,7 +121,8 @@ const backgrounds = [
             ref: [
                 'David McEachan',
                 'https://www.pexels.com/photo/incandescent-led-bulb-68084/'
-            ]
+            ],
+            theme: '#cecec5'
         }
     },
     {
@@ -121,7 +133,8 @@ const backgrounds = [
             ref: [
                 'DaryaGrey_Owl',
                 'https://www.pexels.com/photo/raindrops-running-down-the-window-16295359/'
-            ]
+            ],
+            theme: '#81a1ad'
         },
         night: {
             src: '/../dist/images/light-rain.jpg',
@@ -129,7 +142,8 @@ const backgrounds = [
             ref: [
                 'DaryaGrey_Owl',
                 'https://www.pexels.com/photo/raindrops-running-down-the-window-16295359/'
-            ]
+            ],
+            theme: '#81a1ad'
         }
     },
     {
@@ -140,7 +154,8 @@ const backgrounds = [
             ref: [
                 'Pixabay',
                 'https://www.pexels.com/photo/close-up-of-frozen-water-314958/'
-            ]
+            ],
+            theme: '#BFE5F7'
         },
         night: {
             src: '/../dist/images/moderate-snow.jpg',
@@ -148,7 +163,8 @@ const backgrounds = [
             ref: [
                 'Egor Kamelev',
                 'https://www.pexels.com/photo/close-up-photography-of-snowflake-813872/'
-            ]
+            ],
+            theme: '#afd2e4'
         }
     },
     {
@@ -159,7 +175,8 @@ const backgrounds = [
             ref: [
                 'Frank Cone',
                 'https://www.pexels.com/photo/lightning-strikes-2258536/'
-            ]
+            ],
+            theme: '#b3b6d3'
         },
         night: {
             src: '/../dist/images/N-thunder.jpg',
@@ -167,7 +184,8 @@ const backgrounds = [
             ref: [
                 'Сергей Леденёв',
                 'https://www.pexels.com/photo/lightning-strike-on-the-sky-8956453/'
-            ]
+            ],
+            theme: '#fcded0'
         }
     },
     {
@@ -178,7 +196,8 @@ const backgrounds = [
             ref: [
                 'Maria Orlova',
                 'https://www.pexels.com/photo/aged-building-facade-with-snow-on-roof-4969981/'
-            ]
+            ],
+            theme: '#D1DBDD'
         },
         night: {
             src: '/../dist/images/N-heavy-snow.jpg',
@@ -186,7 +205,8 @@ const backgrounds = [
             ref: [
                 'Maria Orlova',
                 'https://www.pexels.com/photo/snowy-wooden-house-during-snowfall-at-night-4969846/'
-            ]
+            ],
+            theme: '#c9ad9a'
         }
     },
     {
@@ -197,7 +217,8 @@ const backgrounds = [
             ref: [
                 'Skitterphoto',
                 'https://www.pexels.com/photo/close-up-photography-of-ice-crystals-on-edges-of-corrugated-sheets-730910/'
-            ]
+            ],
+            theme: '#bcc5db'
         },
         night: {
             src: '/../dist/images/N-freezing-rain.jpg',
@@ -205,7 +226,8 @@ const backgrounds = [
             ref: [
                 'Lukas Rychvalsky',
                 'https://www.pexels.com/photo/photo-of-windshield-during-rainy-weather-1600909/'
-            ]
+            ],
+            theme: '#4fb1c5'
         }
     },
     {
@@ -216,7 +238,8 @@ const backgrounds = [
             ref: [
                 'Sinitta Leunen',
                 'https://www.pexels.com/photo/through-window-of-car-on-mirror-5902149/'
-            ]
+            ],
+            theme: '#acc0c2'
         },
         night: {
             src: '/../dist/images/heavy-rain.jpg',
@@ -224,7 +247,8 @@ const backgrounds = [
             ref: [
                 'Sinitta Leunen',
                 'https://www.pexels.com/photo/through-window-of-car-on-mirror-5902149/'
-            ]
+            ],
+            theme: '#acc0c2'
         }
     },
     {
@@ -235,7 +259,8 @@ const backgrounds = [
             ref: [
                 'Egor Kamalev',
                 'https://www.pexels.com/photo/close-up-photography-of-snowflake-813872/'
-            ]
+            ],
+            theme: '#afd2e4'
         },
         night: {
             src: '/../dist/images/N-light-snow.jpg',
@@ -243,7 +268,8 @@ const backgrounds = [
             ref: [
                 'Martin Mariani',
                 'https://www.pexels.com/photo/photo-of-trees-and-snow-covered-ground-during-night-time-3801463/'
-            ]
+            ],
+            theme: '#c5aab7'
         }
     }
 ];
