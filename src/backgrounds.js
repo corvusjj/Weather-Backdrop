@@ -27,6 +27,14 @@ const backgrounds = [
                 'Gilberto Olimpio',
                 'https://www.pexels.com/photo/man-paragliding-over-the-sea-5036747/'
             ]
+        },
+        night: {
+            src: '/../dist/images/N-partly-cloudy.jpg',
+            alt: 'Free Stars And Clouds at Nighttime Stock Photo',
+            ref: [
+                'Arnie Chou',
+                'https://www.pexels.com/photo/stars-and-clouds-at-nighttime-1229042/'
+            ]
         }
     },
     {
@@ -37,6 +45,14 @@ const backgrounds = [
             ref: [
                 'NastyaSensei',
                 'https://www.pexels.com/photo/sea-sky-sunset-clouds-1069480/'
+            ]
+        },
+        night: {
+            src: '/../dist/images/N-partly-cloudy.jpg',
+            alt: 'Free Stars And Clouds at Nighttime Stock Photo',
+            ref: [
+                'Arnie Chou',
+                'https://www.pexels.com/photo/stars-and-clouds-at-nighttime-1229042/'
             ]
         }
     },
@@ -49,6 +65,14 @@ const backgrounds = [
                 'Marina Leonova',
                 'https://www.pexels.com/photo/brown-grass-field-under-white-sky-8624442/'
             ]
+        },
+        night: {
+            src: '/../dist/images/N-overcast.jpg',
+            alt: 'Free White Houses Near Sea Cliff Stock Photo',
+            ref: [
+                'Pixabay',
+                'https://www.pexels.com/photo/sea-sunset-water-rocks-60015/'
+            ]
         }
     },
     {
@@ -59,6 +83,14 @@ const backgrounds = [
             ref: [
                 'Helena Lopes',
                 'https://www.pexels.com/photo/cars-riding-along-asphalt-road-towards-tunnel-on-gloomy-weather-4409445/'
+            ]
+        },
+        night: {
+            src: '/../dist/images/N-fog.jpg',
+            alt: 'Free Man Walking on a Foggy Street at Night',
+            ref: [
+                'Nazila Azimzada',
+                'https://www.pexels.com/photo/silhouette-of-a-man-walking-on-a-foggy-street-at-night-15897185/'
             ]
         }
     },
@@ -71,6 +103,14 @@ const backgrounds = [
                 'Christian Salwa',
                 'https://www.pexels.com/photo/fields-flare-sky-spring-1064472/'
             ]
+        },
+        night: {
+            src: '/../dist/images/N-patchy-rain.jpg',
+            alt: 'Free Incandescent Led Bulb Stock Photo',
+            ref: [
+                'David McEachan',
+                'https://www.pexels.com/photo/incandescent-led-bulb-68084/'
+            ]
         }
     },
     {
@@ -81,6 +121,14 @@ const backgrounds = [
             ref: [
                 'DaryaGrey_Owl',
                 'https://www.pexels.com/photo/raindrops-running-down-the-window-16295359/'
+            ]
+        },
+        night: {
+            src: '/../dist/images/N-light-rain.jpg',
+            alt: 'Free Bokeh With Rain Drops on Glass Stock Photo',
+            ref: [
+                'Bob Clark',
+                'https://www.pexels.com/photo/bokeh-photography-21492/'
             ]
         }
     },
@@ -93,6 +141,14 @@ const backgrounds = [
                 'Pixabay',
                 'https://www.pexels.com/photo/close-up-of-frozen-water-314958/'
             ]
+        },
+        night: {
+            src: '/../dist/images/moderate-snow.jpg',
+            alt: 'Free Close-up Photography of Snowflake Stock Photo',
+            ref: [
+                'Egor Kamelev',
+                'https://www.pexels.com/photo/close-up-photography-of-snowflake-813872/'
+            ]
         }
     },
     {
@@ -103,6 +159,14 @@ const backgrounds = [
             ref: [
                 'Frank Cone',
                 'https://www.pexels.com/photo/lightning-strikes-2258536/'
+            ]
+        },
+        night: {
+            src: '/../dist/images/N-thunder.jpg',
+            alt: 'Free Lightning Strike on the Sky Stock Photo',
+            ref: [
+                'Сергей Леденёв',
+                'https://www.pexels.com/photo/lightning-strike-on-the-sky-8956453/'
             ]
         }
     },
@@ -115,6 +179,14 @@ const backgrounds = [
                 'Maria Orlova',
                 'https://www.pexels.com/photo/aged-building-facade-with-snow-on-roof-4969981/'
             ]
+        },
+        night: {
+            src: '/../dist/images/N-heavy-snow.jpg',
+            alt: 'Free Exterior of small wooden cottage with snow on roof and burning electric lights in window during snowfall at cold winter night Stock Photo',
+            ref: [
+                'Maria Orlova',
+                'https://www.pexels.com/photo/snowy-wooden-house-during-snowfall-at-night-4969846/'
+            ]
         }
     },
     {
@@ -126,11 +198,27 @@ const backgrounds = [
                 'Skitterphoto',
                 'https://www.pexels.com/photo/close-up-photography-of-ice-crystals-on-edges-of-corrugated-sheets-730910/'
             ]
+        },
+        night: {
+            src: '/../dist/images/N-freezing-rain.jpg',
+            alt: 'Free Photo of Windshield During Rainy Weather Stock Photo',
+            ref: [
+                'Lukas Rychvalsky',
+                'https://www.pexels.com/photo/photo-of-windshield-during-rainy-weather-1600909/'
+            ]
         }
     },
     {
         code: ['1186', '1192', '1243', '1246'],
         day: {
+            src: '/../dist/images/heavy-rain.jpg',
+            alt: 'Free Raining Through Window of Car Focusing Side Mirror Stock Photo',
+            ref: [
+                'Sinitta Leunen',
+                'https://www.pexels.com/photo/through-window-of-car-on-mirror-5902149/'
+            ]
+        },
+        night: {
             src: '/../dist/images/heavy-rain.jpg',
             alt: 'Free Raining Through Window of Car Focusing Side Mirror Stock Photo',
             ref: [
@@ -147,6 +235,14 @@ const backgrounds = [
             ref: [
                 'Egor Kamalev',
                 'https://www.pexels.com/photo/close-up-photography-of-snowflake-813872/'
+            ]
+        },
+        night: {
+            src: '/../dist/images/N-light-snow.jpg',
+            alt: 'Free Photo of Trees And Snow Covered Ground During Night Time Stock Photo',
+            ref: [
+                'Martin Mariani',
+                'https://www.pexels.com/photo/photo-of-trees-and-snow-covered-ground-during-night-time-3801463/'
             ]
         }
     }
