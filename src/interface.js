@@ -55,7 +55,6 @@ function updateHistoryInterface(history) {
 }
 
 let temp = 'celsius';
-let timePeriod;
 let dataCurrent;
 let dataLocation;
 
@@ -78,11 +77,6 @@ function displayWeatherIcon() {
     weatherIcon.setAttribute('src', dataCurrent.condition.icon);
 }
 
-function setTimePeriod(localTime) {
-    const [hour] = localTime.split(':');
-    hour > 4 && hour < 18 ? timePeriod = 'day': timePeriod = 'night';
-}
-
 function displayDate() {
     const [dateData, timeData] = dataLocation.localtime.split(' ');
     const localDate = new Date(dateData);
@@ -92,8 +86,6 @@ function displayDate() {
     time.textContent = timeData + ' - ';
     day.textContent = dayName + ',';
     date.textContent = formattedDate;
-
-    setTimePeriod(timeData);
 }
 
 function displayCondition() {
@@ -141,10 +133,7 @@ function displayBackground() {
     const weatherCode = dataCurrent.condition.code.toString();
     const imageData = backgrounds.find(data => data.code.includes(weatherCode));
 
-    backgroundImg.src = imageData.day.src;
-    backgroundImg.alt = imageData.day.alt;
-
-    if (timePeriod === 'day') {
+    if (dataCurrent.is_day === 1) {
         backgroundImg.src = imageData.day.src;
         backgroundImg.alt = imageData.day.alt;
     } else {
