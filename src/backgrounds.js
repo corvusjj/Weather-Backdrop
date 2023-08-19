@@ -29,7 +29,7 @@ const backgrounds = [
             ]
         },
         night: {
-            src: '/../dist/images/N-partly-cloudy.jpg',
+            src: '/../dist/images/N-cloudy.jpg',
             alt: 'Free Stars And Clouds at Nighttime Stock Photo',
             ref: [
                 'Arnie Chou',
@@ -48,7 +48,7 @@ const backgrounds = [
             ]
         },
         night: {
-            src: '/../dist/images/N-partly-cloudy.jpg',
+            src: '/../dist/images/N-cloudy.jpg',
             alt: 'Free Stars And Clouds at Nighttime Stock Photo',
             ref: [
                 'Arnie Chou',

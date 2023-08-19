@@ -144,7 +144,13 @@ function displayBackground() {
     backgroundImg.src = imageData.day.src;
     backgroundImg.alt = imageData.day.alt;
 
-    console.log(timePeriod);
+    if (timePeriod === 'day') {
+        backgroundImg.src = imageData.day.src;
+        backgroundImg.alt = imageData.day.alt;
+    } else {
+        backgroundImg.src = imageData.night.src;
+        backgroundImg.alt = imageData.night.alt;
+    }
 }
 
 const eventHandlers = (() => {
