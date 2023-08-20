@@ -14,6 +14,7 @@ const searchedLcn = historyList.querySelectorAll('li');
 
 const menu = document.querySelector('#menu');
 const menuModal = document.querySelector('.menu-modal');
+const toggleTempBtn = document.querySelector('#toggle-temp-btn');
 
 const backgroundImg = document.querySelector('.background > img');
 const dataMain = document.querySelector('.data-main');
@@ -158,8 +159,10 @@ function displayBackground() {
 function setTheme(time, imageData) {
     if (time === 'day') {
         searchBtn.style.background = imageData.day.theme;
+        toggleTempBtn.style.background = imageData.day.theme;
     } else {
         searchBtn.style.background = imageData.night.theme;
+        toggleTempBtn.style.background = imageData.night.theme;
     }
 }
 
