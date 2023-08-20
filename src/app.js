@@ -81,4 +81,4 @@ async function fetchWeather(link) {
 
 export { searchCity }
 
-// pexels api / weatherTheme / display photos / temp conversion / animal/weather toggling function
+// pexels api / display photos / temp conversion / animal/weather toggling function
