@@ -106,6 +106,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: #7fa7d4;
 }
 
 .toggle-btn * {
@@ -125,6 +126,10 @@ body {
     border-radius: 2px;
     position: absolute;
     top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s;
 }
 
 #toggle-temp-btn[data-active-temp="c"] 

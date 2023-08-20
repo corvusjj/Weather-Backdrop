@@ -71,13 +71,24 @@ let dataCurrent;
 let dataLocation;
 
 function setTemperature() {
-    // set changeTemp function
+    if (toggleTempBtn.dataset.activeTemp === 'c') {
+        temp = 'fahrenheit';
+        toggleTempBtn.dataset.activeTemp = 'f';
+    } else {
+        temp = 'celsius';
+        toggleTempBtn.dataset.activeTemp = 'c';
+    }
+
+    displayTemperature();
 }
 
 function displayTemperature() {
     if (temp === 'celsius') {
         temperature.textContent = dataCurrent.temp_c + '°';
         feelsLike.textContent = dataCurrent.feelslike_c + '°';
+    } else {
+        temperature.textContent = dataCurrent.temp_f + '°';
+        feelsLike.textContent = dataCurrent.feelslike_f + '°';
     }
 }
 
@@ -208,6 +219,11 @@ const eventHandlers = (() => {
         if (e.target === menuModal) {
             hideMenu();
         }
+    });
+
+    toggleTempBtn.addEventListener('click', () => {
+        if (searchBtn.classList.contains('inactive')) return;
+        setTemperature();
     });
 
 })();
