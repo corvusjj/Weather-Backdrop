@@ -9,6 +9,7 @@ const dataContainer = document.querySelector('.data-container');
 const loadingContainer = document.querySelector('.loading-container');
 const pendingCity = document.querySelector('#pending-city');
 const historyList = document.querySelector('#search-history > ul');
+const searchedLcn = historyList.querySelectorAll('li');
 
 const backgroundImg = document.querySelector('.background > img');
 const temperature = document.querySelector('#temperature');
@@ -51,6 +52,11 @@ function updateHistoryInterface(history) {
         const li = document.createElement('li');
         li.textContent = city;
         historyList.appendChild(li);
+
+        li.addEventListener('click', () => {
+            if (searchBtn.classList.contains('inactive')) return;
+            searchCity(city);
+        });
     });
 }
 
@@ -166,6 +172,13 @@ const eventHandlers = (() => {
         }
     });
     
+    searchedLcn.forEach(li => {
+        li.addEventListener('click', () => {
+            if (searchBtn.classList.contains('inactive')) return;
+            searchCity(li.textContent);
+        });
+    });
+
 })();
 
 export { 
