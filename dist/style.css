@@ -96,8 +96,8 @@ body {
 }
 
 .toggle-btn {
-    width: 62px;
-    height: 22px;
+    width: 64px;
+    height: 23px;
     cursor: pointer;
     border-radius: 2px;
     border: none;
@@ -106,7 +106,9 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #7fa7d4;
+    background: linear-gradient(#00000077, #00000021 3%, #7fa7d4 12%);
+    border-right: 1px solid #00000085;
+    border-left: 1px solid #00000085;
 }
 
 .toggle-btn * {
@@ -125,7 +127,7 @@ body {
     background: #ECE8DE;
     border-radius: 2px;
     position: absolute;
-    top: 2px;
+    top: 3px;
     display: flex;
     justify-content: center;
     align-items: center;

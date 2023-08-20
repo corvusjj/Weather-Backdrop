@@ -170,10 +170,10 @@ function displayBackground() {
 function setTheme(time, imageData) {
     if (time === 'day') {
         searchBtn.style.background = imageData.day.theme;
-        toggleTempBtn.style.background = imageData.day.theme;
+        toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.day.theme} 12%)`;
     } else {
         searchBtn.style.background = imageData.night.theme;
-        toggleTempBtn.style.background = imageData.night.theme;
+        toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.night.theme} 12%)`;
     }
 }
 
