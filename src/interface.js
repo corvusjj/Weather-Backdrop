@@ -210,6 +210,7 @@ const eventHandlers = (() => {
     searchedLcn.forEach(li => {
         li.addEventListener('click', () => {
             if (searchBtn.classList.contains('inactive')) return;
+            inputCity.value = li.textContent;
             searchCity(li.textContent);
         });
     });

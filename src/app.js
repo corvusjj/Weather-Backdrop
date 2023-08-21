@@ -54,7 +54,7 @@ async function searchCity(city) {
         displayBackground();
     })
 
-    .catch((errorData) => displayError(errorData.error.message))
+    .catch(displayError)
 
     .finally(() => {
         endLoading();
@@ -75,10 +75,10 @@ async function fetchWeather(link) {
     } catch(err) {
         const errorData = await err.json();
         console.log(errorData);
-        throw errorData;
+        throw errorData.error.message;
     }
 }
 
 export { searchCity }
 
-// pexels api / display photos / animal/weather toggling function
+// animal/weather toggling function / setTimer and change bg to default
