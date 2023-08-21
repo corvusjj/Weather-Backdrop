@@ -1,6 +1,6 @@
 import { searchCity } from './app';
 import { format } from 'date-fns';
-import { backgrounds } from './backgrounds';
+import { weatherBackgrounds } from './backgrounds';
 
 const weatherSidebar = document.querySelector('.weather-sidebar');
 const inputCity = document.querySelector('#input-city');
@@ -154,7 +154,7 @@ function removeError() {
 
 function displayBackground() {    
     const weatherCode = dataCurrent.condition.code.toString();
-    const imageData = backgrounds.find(data => data.code.includes(weatherCode));
+    const imageData = weatherBackgrounds.find(data => data.code.includes(weatherCode));
 
     if (dataCurrent.is_day === 1) {
         backgroundImg.src = imageData.day.src;

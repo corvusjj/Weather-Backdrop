@@ -1,4 +1,4 @@
-const backgrounds = [
+const weatherBackgrounds = [
     {
         code: ['1000'],
         day: {
@@ -274,4 +274,51 @@ const backgrounds = [
     }
 ];
 
-export { backgrounds }
+const animalBackgrounds = [
+    {
+        id: '1203309',
+        theme: '#cfa459'
+    },
+    {
+        id: '16057125',
+        theme: '#b2b68d'
+    },
+    {
+        id: '6690564',
+        theme: '#a7b7d8'
+    },
+    {
+        id: '7787730',
+        theme: '#8b9ecf'
+    },
+    {
+        id: '2244297',
+        theme: '#c5c53b'
+    },
+    {
+        id: '2397653',
+        theme: '#71b4d6'
+    },
+    {
+        id: '247373',
+        theme: '#e9d044'
+    },
+    {
+        id: '5745357',
+        theme: '#bbbbab'
+    },
+    {
+        id: '12075077',
+        theme: '#82ad5a'
+    },
+    {
+        id: '1275451',
+        theme: '#bdaeb7'
+    },
+    {
+        id: '3160373',
+        theme: '#b8ad83'
+    }
+]
+
+export { weatherBackgrounds, animalBackgrounds }
