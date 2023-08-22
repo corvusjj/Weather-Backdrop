@@ -80,5 +80,3 @@ async function fetchWeather(link) {
 }
 
 export { searchCity }
-
-// animal/weather toggling function / setTimer and change bg to default
