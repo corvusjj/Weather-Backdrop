@@ -15,6 +15,8 @@ const searchedLcn = historyList.querySelectorAll('li');
 const menu = document.querySelector('#menu');
 const menuModal = document.querySelector('.menu-modal');
 const toggleTempBtn = document.querySelector('#toggle-temp-btn');
+const toggleBgBtn = document.querySelector('#toggle-bg-btn');
+const toggleBtn = document.querySelectorAll('.toggle-btn');
 
 const backgroundImg = document.querySelector('.background > img');
 const dataMain = document.querySelector('.data-main');
@@ -35,12 +37,6 @@ const country = document.querySelector('#country');
 const region = document.querySelector('#region');
 const latitude = document.querySelector('#lat');
 const longitude = document.querySelector('#lon');
-
-let activeBackground = 'animals';
-
-function toggleActiveBackground() {
-    //  function ...
-}
 
 function startLoading() {
     dataContainer.style.display = 'none';
@@ -161,13 +157,13 @@ function removeError() {
 function setTheme(time, imageData) {
     if (time === 'day') {
         searchBtn.style.background = imageData.day.theme;
-        toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.day.theme} 12%)`;
+        toggleBtn.forEach(btn => btn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.day.theme} 12%)`);
     } else if (time === 'night') {
         searchBtn.style.background = imageData.night.theme;
-        toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.night.theme} 12%)`;
+        toggleBtn.forEach(btn => btn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.night.theme} 12%)`);
     } else {
         searchBtn.style.background = imageData.theme;
-        toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.theme} 12%)`;
+        toggleBtn.forEach(btn => btn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.theme} 12%)`);
     }
 }
 
@@ -180,6 +176,18 @@ function randomIndex() {
     if (indexHistory.length > 5) indexHistory.pop();
 
     return selectedIndex;
+}
+
+let activeBackground = 'weather';
+
+function toggleActiveBackground() {
+    if (activeBackground === 'weather') {
+        toggleBgBtn.dataset.activeBg = 'animals';
+        activeBackground = 'animals';
+    } else {
+        toggleBgBtn.dataset.activeBg = 'weather';
+        activeBackground = 'weather';
+    }
 }
 
 async function setAnimalBackground() {
@@ -237,7 +245,8 @@ async function runRequestLimit() {
 } 
 
 async function displayBackground() {    
-    setAnimalBackground();
+    // setAnimalBackground();
+    setWeatherBackground();
 }
 
 function showMenu() {
@@ -288,6 +297,11 @@ const eventHandlers = (() => {
     toggleTempBtn.addEventListener('click', () => {
         if (searchBtn.classList.contains('inactive')) return;
         setTemperature();
+    });
+
+    toggleBgBtn.addEventListener('click', () => {
+        if (searchBtn.classList.contains('inactive')) return;
+        toggleActiveBackground();
     });
 
 })();
