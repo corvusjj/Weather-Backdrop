@@ -120,6 +120,21 @@ body {
     line-height: 1;
 }
 
+#toggle-bg-btn svg:first-of-type {
+    width: 16px;
+    height: 16px;
+}
+
+#toggle-bg-btn svg:nth-of-type(2) {
+    width: 18px;
+    height: 18px;
+}
+
+.toggle-btn:hover > .switch {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
 .switch {
     width: 29px;
     height: 18px;

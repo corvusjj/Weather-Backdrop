@@ -188,6 +188,8 @@ function toggleActiveBackground() {
         toggleBgBtn.dataset.activeBg = 'weather';
         activeBackground = 'weather';
     }
+
+    displayBackground();
 }
 
 async function setAnimalBackground() {
@@ -240,13 +242,15 @@ function delay(ms) {
 //  loading limit error handler for animalBackground
 async function runRequestLimit() {
     await delay(5000);
-    alert ('Animal Background Image: API request timed out.');
     // () => ...toggle to weatherBackground
 } 
 
 async function displayBackground() {    
-    // setAnimalBackground();
-    setWeatherBackground();
+    if (activeBackground === 'animals') {
+        setAnimalBackground();
+    } else {
+        setWeatherBackground();
+    }
 }
 
 function showMenu() {
