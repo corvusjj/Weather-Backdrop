@@ -171,8 +171,15 @@ function setTheme(time, imageData) {
     }
 }
 
+let indexHistory = [];
 function randomIndex() {
-    return Math.floor(Math.random() * animalBackgrounds.length);
+    const selectedIndex = Math.floor(Math.random() * animalBackgrounds.length);
+    if (indexHistory.includes(selectedIndex)) return randomIndex();
+
+    indexHistory.unshift(selectedIndex);
+    if (indexHistory.length > 5) indexHistory.pop();
+
+    return selectedIndex;
 }
 
 async function setAnimalBackground() {
