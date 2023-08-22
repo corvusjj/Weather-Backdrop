@@ -162,15 +162,25 @@ function setTheme(time, imageData) {
     if (time === 'day') {
         searchBtn.style.background = imageData.day.theme;
         toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.day.theme} 12%)`;
-    } else {
+    } else if (time === 'night') {
         searchBtn.style.background = imageData.night.theme;
         toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.night.theme} 12%)`;
+    } else {
+        searchBtn.style.background = imageData.theme;
+        toggleTempBtn.style.background = `linear-gradient(#00000077, #00000021 3%, ${imageData.theme} 12%)`;
     }
+}
+
+function randomIndex() {
+    return Math.floor(Math.random() * animalBackgrounds.length);
 }
 
 async function setAnimalBackground() {
     try {
-        const response = await fetch('https://api.pexels.com/v1/photos/5745357', {
+        const selectedBg = animalBackgrounds[randomIndex()];
+        const idApi = selectedBg.id;
+
+        const response = await fetch(`https://api.pexels.com/v1/photos/${idApi}`, {
             headers: {
                 Authorization: 'k1QAYhe230dwOf6Gl2FFjoH6czizpYh1u1mGPJto1Vwy6gJ5ArAc5LGd'
             },
@@ -184,6 +194,7 @@ async function setAnimalBackground() {
         const picData = await response.json();
         alert('Note: animal backgrounds are random and not related to current weather.🐬');
         backgroundImg.src = picData.src.large2x;
+        setTheme(null, selectedBg);
 
     }  catch (err) {
         const errorData = await err.json();
@@ -219,7 +230,7 @@ async function runRequestLimit() {
 } 
 
 async function displayBackground() {    
-    setWeatherBackground();
+    setAnimalBackground();
 }
 
 function showMenu() {
