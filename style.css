@@ -143,6 +143,17 @@ body {
     left: 31px;
 }
 
+#toggle-bg-btn[data-active-bg="weather"] 
+.switch {
+    left: 2px;
+}
+
+#toggle-bg-btn[data-active-bg="animals"]
+.switch {
+    left: 31px;
+}
+
+
 .weather-sidebar {
     position: absolute;
     background: rgba(0, 0, 0, 0.4);
