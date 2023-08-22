@@ -192,7 +192,7 @@ async function setAnimalBackground() {
         }
 
         const picData = await response.json();
-        alert('Note: animal backgrounds are random and not related to current weather.🐬');
+        alert('Note: Animal backgrounds are not related to the current weather. Used for api tests only and might load longer. Choosing this will depend on your character, and your network provider.');
         backgroundImg.src = picData.src.large2x;
         setTheme(null, selectedBg);
 
