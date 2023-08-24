@@ -17,6 +17,7 @@ const menuModal = document.querySelector('.menu-modal');
 const toggleTempBtn = document.querySelector('#toggle-temp-btn');
 const toggleBgBtn = document.querySelector('#toggle-bg-btn');
 const toggleBtn = document.querySelectorAll('.toggle-btn');
+const imgLoadingIcon = document.querySelector('#img-loading-icon');
 
 const backgroundContainer  = document.querySelector('.background');
 const backgroundImg = document.querySelector('.background > img');
@@ -168,6 +169,14 @@ function setTheme(time, imageData) {
     }
 }
 
+function displayImgLoading() {
+    imgLoadingIcon.style.display = 'inline';
+}
+
+function hideImgLoading() {
+    imgLoadingIcon.style.display = 'none';
+}
+
 let indexHistory = [];
 function randomIndex() {
     const selectedIndex = Math.floor(Math.random() * animalBackgrounds.length);
@@ -252,6 +261,7 @@ async function setAnimalBackground() {
         backgroundContainer.innerHTML = '';
         backgroundContainer.appendChild(img);
         setTheme(null, imgData);
+        hideImgLoading();
     })
     .catch((error) => {
         alert(error);
@@ -275,10 +285,15 @@ function setWeatherBackground() {
     }
 
     backgroundContainer.innerHTML = '';
-    backgroundContainer.appendChild(img);
+
+    img.onload = () => {
+        backgroundContainer.appendChild(img);
+        hideImgLoading();
+    }   
 }
 
 async function displayBackground() {    
+    displayImgLoading();
     if (activeBackground === 'animals') {
         setAnimalBackground();
     } else {
