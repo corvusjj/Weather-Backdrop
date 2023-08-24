@@ -233,7 +233,7 @@ async function setAnimalBackground() {
     const requestLimit = new Promise((resolve, reject) => {
         setTimeout(() => {
             reject('Animal Background: Image Loading Timed Out')
-        }, 5000);
+        }, 100);
     });
 
     Promise.race([loadAnimalBackground, requestLimit])
@@ -241,7 +241,10 @@ async function setAnimalBackground() {
         backgroundContainer.innerHTML = '';
         backgroundContainer.appendChild(img);
     })
-    .catch((error) => alert(error));
+    .catch((error) => {
+        alert(error);
+        setWeatherBackground();
+    });
 }
 
 function setWeatherBackground() {
