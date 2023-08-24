@@ -18,9 +18,9 @@ const toggleTempBtn = document.querySelector('#toggle-temp-btn');
 const toggleBgBtn = document.querySelector('#toggle-bg-btn');
 const toggleBtn = document.querySelectorAll('.toggle-btn');
 const imgLoadingIcon = document.querySelector('#img-loading-icon');
+const tooltip = document.querySelector('#tooltip');
 
 const backgroundContainer  = document.querySelector('.background');
-const backgroundImg = document.querySelector('.background > img');
 const dataMain = document.querySelector('.data-main');
 const temperature = dataMain.querySelector('#temperature');
 const city = dataMain.querySelector('#city');
@@ -317,6 +317,17 @@ function hideMenu() {
     menuModal.classList.remove('menu-modal-show');
 }
 
+function displayTooltip(e, text) {
+    tooltip.textContent = text;
+    tooltip.style.left = e.target.getBoundingClientRect().left + 'px';
+    tooltip.style.top = e.target.getBoundingClientRect().top - 30 + 'px';
+    tooltip.style.display = 'inline';
+} 
+
+function hideTooltip() {
+    tooltip.style.display = 'none';
+}
+
 const eventHandlers = (() => {
 
     searchBtn.addEventListener('click', () => {
@@ -348,14 +359,37 @@ const eventHandlers = (() => {
 
     toggleTempBtn.addEventListener('click', () => {
         if (searchBtn.classList.contains('inactive')) return;
+        hideTooltip()
         setTemperature();
     });
 
     toggleBgBtn.addEventListener('click', () => {
         if (searchBtn.classList.contains('inactive')) return;
+        hideTooltip();
         toggleActiveBackground();
     });
 
+    toggleTempBtn.addEventListener('mouseover', (e) => {
+        e.target.dataset.activeTemp === 'c' ? 
+        displayTooltip(e, 'set temp to fahrenheit'):
+        displayTooltip(e, 'set temp to celsius');
+    });
+
+    toggleTempBtn.addEventListener('mouseout', hideTooltip);
+
+    toggleBgBtn.addEventListener('mouseover', (e) => {
+        e.target.dataset.activeBg === 'weather' ? 
+        displayTooltip(e, 'set background to animals'):
+        displayTooltip(e, 'set background weather');
+    });
+
+    toggleBgBtn.addEventListener('mouseout', hideTooltip);
+
+    imgLoadingIcon.addEventListener('mouseover', (e) => {
+        displayTooltip(e, 'loading background image');
+    });
+
+    imgLoadingIcon.addEventListener('mouseout', hideTooltip);
 })();
 
 export { 
