@@ -126,7 +126,7 @@ const weatherBackgrounds = [
         }
     },
     {
-        code: ['1183', '1153', '1240'],
+        code: ['1183', '1153', '1240', '1189'],
         day: {
             src: '/../dist/images/light-rain.jpg',
             alt: 'Free Raindrops Running Down the Window Stock Photo',

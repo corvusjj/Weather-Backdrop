@@ -18,6 +18,7 @@ const toggleTempBtn = document.querySelector('#toggle-temp-btn');
 const toggleBgBtn = document.querySelector('#toggle-bg-btn');
 const toggleBtn = document.querySelectorAll('.toggle-btn');
 
+const backgroundContainer  = document.querySelector('.background');
 const backgroundImg = document.querySelector('.background > img');
 const dataMain = document.querySelector('.data-main');
 const temperature = dataMain.querySelector('#temperature');
@@ -192,65 +193,78 @@ function toggleActiveBackground() {
     displayBackground();
 }
 
-async function setAnimalBackground() {
-    try {
-        const selectedBg = animalBackgrounds[randomIndex()];
-        const idApi = selectedBg.id;
+const loadAnimalBackground = new Promise((resolve, reject) => {
+    const selectedBg = animalBackgrounds[randomIndex()];
+    const idApi = selectedBg.id;
 
-        const response = await fetch(`https://api.pexels.com/v1/photos/${idApi}`, {
-            headers: {
-                Authorization: 'k1QAYhe230dwOf6Gl2FFjoH6czizpYh1u1mGPJto1Vwy6gJ5ArAc5LGd'
-            },
-            mode: 'cors'
-        });
+    fetch(`https://api.pexels.com/v1/photos/${idApi}`, {
+        headers: {
+            Authorization: 'k1QAYhe230dwOf6Gl2FFjoH6czizpYh1u1mGPJto1Vwy6gJ5ArAc5LGd'
+        },
+        mode: 'cors'
+    })
 
+    .then(response => {
         if (!response.ok) {
-            throw response;
+            throw new Error('Error fetching image data from Pexels API');
         }
 
-        const picData = await response.json();
-        alert('Note: Animal backgrounds are not related to the current weather. Used for api tests only and might load longer. Choosing this will depend on your character, and your network provider.');
-        backgroundImg.src = picData.src.large2x;
-        setTheme(null, selectedBg);
+        return response.json();
+    })
+    .then(picData => picData.src.large2x)
+    .then((link) => {
+        const img = new Image();
+        img.src = link;
 
-    }  catch (err) {
-        const errorData = await err.json();
-        alert ('Animal Background Image: ' + errorData.error);
-        // () => ...toggle to weatherBackground
-    }
+        img.onload = () => resolve(img);
+        img.onerror = () => reject('Loading Animal Image Error');
+    })
+
+    .catch(error => reject(error));
+});
+
+const requestLimit = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject(() => console.log('loading timed out'))
+    }, 5000);
+});
+
+async function setAnimalBackground() {
+    Promise.race([loadAnimalBackground, requestLimit])
+    .then((img) => {
+        backgroundContainer.innerHTML = '';
+        backgroundContainer.appendChild(img);
+    })
+    .catch((error) => alert(error));
 }
 
 function setWeatherBackground() {
     const weatherCode = dataCurrent.condition.code.toString();
     const imageData = weatherBackgrounds.find(data => data.code.includes(weatherCode));
+    const img = new Image();
 
+    console.log(weatherCode, imageData);
     if (dataCurrent.is_day === 1) {
-        backgroundImg.src = imageData.day.src;
-        backgroundImg.alt = imageData.day.alt;
+        img.src = imageData.day.src;
+        img.alt = imageData.day.alt;
         setTheme('day', imageData);
     } else {
-        backgroundImg.src = imageData.night.src;
-        backgroundImg.alt = imageData.night.alt;
+        img.src = imageData.night.src;
+        img.alt = imageData.night.alt;
         setTheme('night', imageData);
     }
-}
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    backgroundContainer.innerHTML = '';
+    backgroundContainer.appendChild(img);
 }
-
-//  loading limit error handler for animalBackground
-async function runRequestLimit() {
-    await delay(5000);
-    // () => ...toggle to weatherBackground
-} 
 
 async function displayBackground() {    
-    if (activeBackground === 'animals') {
-        setAnimalBackground();
-    } else {
-        setWeatherBackground();
-    }
+    // if (activeBackground === 'animals') {
+    //     setAnimalBackground();
+    // } else {
+    //     setWeatherBackground();
+    // }
+    setWeatherBackground();
 }
 
 function showMenu() {

@@ -80,3 +80,5 @@ async function fetchWeather(link) {
 }
 
 export { searchCity }
+
+//  figure out loading limit, promise.race
