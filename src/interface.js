@@ -180,7 +180,6 @@ function randomIndex() {
 }
 
 let activeBackground = 'weather';
-
 function toggleActiveBackground() {
     if (activeBackground === 'weather') {
         toggleBgBtn.dataset.activeBg = 'animals';
@@ -193,8 +192,16 @@ function toggleActiveBackground() {
     displayBackground();
 }
 
-async function setAnimalBackground() {
+//  alert user on animalImage api only once.
+let alerted = false;
+function alertUserOnApi() {
+    if (alerted === true) return;
     alert('Note: Animal backgrounds are not related to the current weather. Used for api tests only and might load longer. Choosing this will depend on your character, and your network provider.');
+    alerted = true;
+}
+
+async function setAnimalBackground() {
+    alertUserOnApi();
 
     const loadAnimalBackground = new Promise((resolve, reject) => {
         const selectedBg = animalBackgrounds[randomIndex()];
