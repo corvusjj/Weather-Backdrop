@@ -193,43 +193,49 @@ function toggleActiveBackground() {
     displayBackground();
 }
 
-const loadAnimalBackground = new Promise((resolve, reject) => {
-    const selectedBg = animalBackgrounds[randomIndex()];
-    const idApi = selectedBg.id;
-
-    fetch(`https://api.pexels.com/v1/photos/${idApi}`, {
-        headers: {
-            Authorization: 'k1QAYhe230dwOf6Gl2FFjoH6czizpYh1u1mGPJto1Vwy6gJ5ArAc5LGd'
-        },
-        mode: 'cors'
-    })
-
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Error fetching image data from Pexels API');
-        }
-
-        return response.json();
-    })
-    .then(picData => picData.src.large2x)
-    .then((link) => {
-        const img = new Image();
-        img.src = link;
-
-        img.onload = () => resolve(img);
-        img.onerror = () => reject('Loading Animal Image Error');
-    })
-
-    .catch(error => reject(error));
-});
-
-const requestLimit = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        reject(() => console.log('loading timed out'))
-    }, 5000);
-});
-
 async function setAnimalBackground() {
+    alert('Note: Animal backgrounds are not related to the current weather. Used for api tests only and might load longer. Choosing this will depend on your character, and your network provider.');
+
+    const loadAnimalBackground = new Promise((resolve, reject) => {
+        const selectedBg = animalBackgrounds[randomIndex()];
+        const idApi = selectedBg.id;
+    
+        fetch(`https://api.pexels.com/v1/photos/${idApi}`, {
+            headers: {
+                Authorization: 'k1QAYhe230dwOf6Gl2FFjoH6czizpYh1u1mGPJto1Vwy6gJ5ArAc5LGd'
+            },
+            mode: 'cors'
+        })
+    
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error fetching image data from Pexels API');
+            }
+    
+            return response.json();
+        })
+
+        .then(picData => {
+            const img = new Image();
+            img.src = picData.src.large2x;
+    
+            img.onload = () => resolve(img);
+            img.onerror = () => reject('Loading Animal Image Error');
+
+            const imageId = picData.id.toString();
+            const localImageData = animalBackgrounds.find(bg => bg.id === imageId);
+            setTheme(null, localImageData);
+        })
+    
+        .catch(error => reject(error));
+    });
+    
+    const requestLimit = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject('Animal Background: Image Loading Timed Out')
+        }, 5000);
+    });
+
     Promise.race([loadAnimalBackground, requestLimit])
     .then((img) => {
         backgroundContainer.innerHTML = '';
@@ -243,7 +249,6 @@ function setWeatherBackground() {
     const imageData = weatherBackgrounds.find(data => data.code.includes(weatherCode));
     const img = new Image();
 
-    console.log(weatherCode, imageData);
     if (dataCurrent.is_day === 1) {
         img.src = imageData.day.src;
         img.alt = imageData.day.alt;
@@ -259,12 +264,11 @@ function setWeatherBackground() {
 }
 
 async function displayBackground() {    
-    // if (activeBackground === 'animals') {
-    //     setAnimalBackground();
-    // } else {
-    //     setWeatherBackground();
-    // }
-    setWeatherBackground();
+    if (activeBackground === 'animals') {
+        setAnimalBackground();
+    } else {
+        setWeatherBackground();
+    }
 }
 
 function showMenu() {
