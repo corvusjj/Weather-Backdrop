@@ -218,13 +218,17 @@ async function setAnimalBackground() {
         .then(picData => {
             const img = new Image();
             img.src = picData.src.large2x;
-    
-            img.onload = () => resolve(img);
-            img.onerror = () => reject('Loading Animal Image Error');
 
             const imageId = picData.id.toString();
             const localImageData = animalBackgrounds.find(bg => bg.id === imageId);
-            setTheme(null, localImageData);
+
+            const data = {
+                img: img,
+                imgData: localImageData
+            }
+    
+            img.onload = () => resolve(data);
+            img.onerror = () => reject('Loading Animal Image Error'); 
         })
     
         .catch(error => reject(error));
@@ -233,13 +237,14 @@ async function setAnimalBackground() {
     const requestLimit = new Promise((resolve, reject) => {
         setTimeout(() => {
             reject('Animal Background: Image Loading Timed Out')
-        }, 100);
+        }, 5000);
     });
 
     Promise.race([loadAnimalBackground, requestLimit])
-    .then((img) => {
+    .then(({ img, imgData }) => {
         backgroundContainer.innerHTML = '';
         backgroundContainer.appendChild(img);
+        setTheme(null, imgData);
     })
     .catch((error) => {
         alert(error);
