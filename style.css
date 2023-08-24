@@ -27,6 +27,16 @@ body {
     animation: expose 0.5s ease-in-out;
 }
 
+#img-loading-icon {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    width: 67px;
+    height: 67px;
+    display: none;
+}
+
 @keyframes expose {
     from {
         opacity: 70%;
