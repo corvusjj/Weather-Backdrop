@@ -24,6 +24,15 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: expose 0.5s ease-in-out;
+}
+
+@keyframes expose {
+    from {
+        opacity: 70%;
+    } to {
+        opacity: 100%;
+    }
 }
 
 #menu {
