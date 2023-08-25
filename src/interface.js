@@ -215,7 +215,8 @@ async function setAnimalBackground() {
 
     const loadAnimalBackground = new Promise((resolve, reject) => {
         const selectedBg = animalBackgrounds[randomIndex()];
-        const idApi = selectedBg.id;
+        // const idApi = selectedBg.id;
+        const idApi = 'dasdpad0=iwdpda';
     
         fetch(`https://api.pexels.com/v1/photos/${idApi}`, {
             headers: {
@@ -270,7 +271,7 @@ async function setAnimalBackground() {
     })
     .catch((error) => {
         alert(error);
-        setWeatherBackground();
+        toggleBgBtn.click(); //  set to weather background as default
     });
 }
 
@@ -294,9 +295,8 @@ function setWeatherBackground() {
         setTheme('night', imageData);
     }
 
-    backgroundContainer.innerHTML = '';
-
     img.onload = () => {
+        backgroundContainer.innerHTML = '';
         backgroundContainer.appendChild(img);
         hideImgLoading();
         updateImageSource(photographer, link);

@@ -81,4 +81,4 @@ async function fetchWeather(link) {
 
 export { searchCity }
 
-//  sources / responsive designs / setWeather click
+//  sources / responsive designs
