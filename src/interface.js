@@ -22,7 +22,7 @@ const tooltip = document.querySelector('#tooltip');
 
 const backgroundContainer  = document.querySelector('.background');
 const dataMain = document.querySelector('.data-main');
-const backgroundSource = document.querySelector('.background-source');
+const uiSource = document.querySelector('.ui-source');
 const temperature = dataMain.querySelector('#temperature');
 const city = dataMain.querySelector('#city');
 const weatherIcon = dataMain.querySelector('#weather-icon');
@@ -215,8 +215,7 @@ async function setAnimalBackground() {
 
     const loadAnimalBackground = new Promise((resolve, reject) => {
         const selectedBg = animalBackgrounds[randomIndex()];
-        // const idApi = selectedBg.id;
-        const idApi = 'dasdpad0=iwdpda';
+        const idApi = selectedBg.id;
     
         fetch(`https://api.pexels.com/v1/photos/${idApi}`, {
             headers: {
@@ -316,7 +315,7 @@ function showMenu() {
     weatherSidebar.classList.add('weather-sidebar-hide');
     menu.classList.add('menu-hide');
     dataMain.classList.add('data-main-slide');
-    backgroundSource.classList.add('background-source-slide');
+    uiSource.classList.add('ui-source-slide');
 
     menuModal.classList.add('menu-modal-show');
 }
@@ -325,7 +324,7 @@ function hideMenu() {
     weatherSidebar.classList.remove('weather-sidebar-hide');
     menu.classList.remove('menu-hide');
     dataMain.classList.remove('data-main-slide');
-    backgroundSource.classList.remove('background-source-slide');
+    uiSource.classList.remove('ui-source-slide');
 
     menuModal.classList.remove('menu-modal-show');
 }
@@ -342,7 +341,7 @@ function hideTooltip() {
 }
 
 function updateImageSource(photographer, link) {
-    const anchor = backgroundSource.querySelector('a');
+    const anchor = document.querySelector('#image-source');
     anchor.textContent = photographer;
     anchor.setAttribute('href', link);
 }
