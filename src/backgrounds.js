@@ -2,7 +2,7 @@ const weatherBackgrounds = [
     {
         code: ['1000'],
         day: {
-            src: '/images/sunny.jpg',
+            src: 'images/sunny.jpg',
             alt: 'Free Blue, Yellow, and Green Hot Air Balloon Stock Photo',
             ref: [
                 'Dianne',
@@ -11,7 +11,7 @@ const weatherBackgrounds = [
             theme: '#7fa7d4'
         },
         night: {
-            src: '/images/clear.jpg',
+            src: 'images/clear.jpg',
             alt: 'Free Starry Night Stock Photo',
             ref: [
                 'Tsvetoslav Hristov',
@@ -23,7 +23,7 @@ const weatherBackgrounds = [
     {
         code: ['1003'],
         day: {
-            src: '/images/partly-cloudy.jpg',
+            src: 'images/partly-cloudy.jpg',
             alt: 'Free Man Paragliding Over The Sea Stock Photo',
             ref: [
                 'Gilberto Olimpio',
@@ -32,7 +32,7 @@ const weatherBackgrounds = [
             theme: '#c4c2c9'
         },
         night: {
-            src: '/images/N-cloudy.jpg',
+            src: 'images/N-cloudy.jpg',
             alt: 'Free Moonlight on a Dark Sky Stock Photo',
             ref: [
                 'Roberto Nickson',
@@ -44,7 +44,7 @@ const weatherBackgrounds = [
     {
         code: ['1006'],
         day: {
-            src: '/images/cloudy.jpg',
+            src: 'images/cloudy.jpg',
             alt: 'Free stock photo of atmosphere, clouds, cloudscape',
             ref: [
                 'NastyaSensei',
@@ -53,7 +53,7 @@ const weatherBackgrounds = [
             theme: '#cab3c0'
         },
         night: {
-            src: '/images/N-cloudy.jpg',
+            src: 'images/N-cloudy.jpg',
             alt: 'Free Moonlight on a Dark Sky Stock Photo',
             ref: [
                 'Roberto Nickson',
@@ -65,7 +65,7 @@ const weatherBackgrounds = [
     {
         code: ['1009'],
         day: {
-            src: '/images/overcast.jpg',
+            src: 'images/overcast.jpg',
             alt: 'Free Brown Grass Field Under White Sky Stock Photo',
             ref: [
                 'Marina Leonova',
@@ -74,7 +74,7 @@ const weatherBackgrounds = [
             theme: '#cca594'
         },
         night: {
-            src: '/images/N-overcast.jpg',
+            src: 'images/N-overcast.jpg',
             alt: 'Free Ship at Night Stock Photo',
             ref: [
                 'Plato Terentev',
@@ -86,7 +86,7 @@ const weatherBackgrounds = [
     {
         code: ['1030', '1135', '1147'],
         day: {
-            src: '/images/fog.jpg',
+            src: 'images/fog.jpg',
             alt: 'Free Cars riding along asphalt road towards tunnel on gloomy weather Stock Photo',
             ref: [
                 'Helena Lopes',
@@ -95,7 +95,7 @@ const weatherBackgrounds = [
             theme: '#91b3ab'
         },
         night: {
-            src: '/images/N-fog.jpg',
+            src: 'images/N-fog.jpg',
             alt: 'Free Man Walking on a Foggy Street at Night',
             ref: [
                 'Nazila Azimzada',
@@ -107,7 +107,7 @@ const weatherBackgrounds = [
     {
         code: ['1063', '1180', '1150'],
         day: {
-            src: '/images/patchy-rain.jpg',
+            src: 'images/patchy-rain.jpg',
             alt: 'Free stock photo of fields, flare, sky, rain',
             ref: [
                 'Christian Salwa',
@@ -116,7 +116,7 @@ const weatherBackgrounds = [
             theme: '#bb8fbb'
         },
         night: {
-            src: '/images/N-patchy-rain.jpg',
+            src: 'images/N-patchy-rain.jpg',
             alt: 'Free Incandescent Led Bulb Stock Photo',
             ref: [
                 'David McEachan',
@@ -128,7 +128,7 @@ const weatherBackgrounds = [
     {
         code: ['1183', '1153', '1240', '1189'],
         day: {
-            src: '/images/light-rain.jpg',
+            src: 'images/light-rain.jpg',
             alt: 'Free Raindrops Running Down the Window Stock Photo',
             ref: [
                 'DaryaGrey_Owl',
@@ -137,7 +137,7 @@ const weatherBackgrounds = [
             theme: '#81a1ad'
         },
         night: {
-            src: '/images/light-rain.jpg',
+            src: 'images/light-rain.jpg',
             alt: 'Free Raindrops Running Down the Window Stock Photo',
             ref: [
                 'DaryaGrey_Owl',
@@ -149,7 +149,7 @@ const weatherBackgrounds = [
     {
         code: ['1069', '1204', '1207', '1237', '1249', '1252', '1264', '1261'],
         day: {
-            src: '/images/sleet.jpg',
+            src: 'images/sleet.jpg',
             alt: 'Free Close-up of Frozen Water Stock Photo',
             ref: [
                 'Pixabay',
@@ -158,7 +158,7 @@ const weatherBackgrounds = [
             theme: '#BFE5F7'
         },
         night: {
-            src: '/images/moderate-snow.jpg',
+            src: 'images/moderate-snow.jpg',
             alt: 'Free Close-up Photography of Snowflake Stock Photo',
             ref: [
                 'Egor Kamelev',
@@ -170,7 +170,7 @@ const weatherBackgrounds = [
     {
         code: ['1087', '1273', '1276', '1279', '1282'],
         day: {
-            src: '/images/thunder.jpg',
+            src: 'images/thunder.jpg',
             alt: 'Free Lightning Strikes Stock Photo',
             ref: [
                 'Frank Cone',
@@ -179,7 +179,7 @@ const weatherBackgrounds = [
             theme: '#b3b6d3'
         },
         night: {
-            src: '/images/N-thunder.jpg',
+            src: 'images/N-thunder.jpg',
             alt: 'Free Lightning Strike on the Sky Stock Photo',
             ref: [
                 'Сергей Леденёв',
@@ -191,7 +191,7 @@ const weatherBackgrounds = [
     {
         code: ['1114', '1117', '1219', '1222', '1225'],
         day: {
-            src: '/images/heavy-snow.jpg',
+            src: 'images/heavy-snow.jpg',
             alt: 'Free Aged Building Facade With Snow on Roof Stock Photo',
             ref: [
                 'Maria Orlova',
@@ -200,7 +200,7 @@ const weatherBackgrounds = [
             theme: '#D1DBDD'
         },
         night: {
-            src: '/images/N-heavy-snow.jpg',
+            src: 'images/N-heavy-snow.jpg',
             alt: 'Free Exterior of small wooden cottage with snow on roof and burning electric lights in window during snowfall at cold winter night Stock Photo',
             ref: [
                 'Maria Orlova',
@@ -212,7 +212,7 @@ const weatherBackgrounds = [
     {
         code: ['1168', '1171', '1201', '1072', '1198'],
         day: {
-            src: '/images/freezing-rain.jpg',
+            src: 'images/freezing-rain.jpg',
             alt: 'Free Close-up Photography of Ice Crystals on Edges of Corrugated Sheets Stock Photo',
             ref: [
                 'Skitterphoto',
@@ -221,7 +221,7 @@ const weatherBackgrounds = [
             theme: '#bcc5db'
         },
         night: {
-            src: '/images/N-freezing-rain.jpg',
+            src: 'images/N-freezing-rain.jpg',
             alt: 'Free Photo of Windshield During Rainy Weather Stock Photo',
             ref: [
                 'Lukas Rychvalsky',
@@ -233,7 +233,7 @@ const weatherBackgrounds = [
     {
         code: ['1186', '1192', '1243', '1246'],
         day: {
-            src: '/images/heavy-rain.jpg',
+            src: 'images/heavy-rain.jpg',
             alt: 'Free Raining Through Window of Car Focusing Side Mirror Stock Photo',
             ref: [
                 'Sinitta Leunen',
@@ -242,7 +242,7 @@ const weatherBackgrounds = [
             theme: '#acc0c2'
         },
         night: {
-            src: '/images/heavy-rain.jpg',
+            src: 'images/heavy-rain.jpg',
             alt: 'Free Raining Through Window of Car Focusing Side Mirror Stock Photo',
             ref: [
                 'Sinitta Leunen',
@@ -254,7 +254,7 @@ const weatherBackgrounds = [
     {
         code: ['1066', '1210', '1213', '1216', '1255', '1252', '1258'],
         day: {
-            src: '/images/moderate-snow.jpg',
+            src: 'images/moderate-snow.jpg',
             alt: 'Free Close-up Photography of SnowFlake Stock Photo',
             ref: [
                 'Egor Kamalev',
@@ -263,7 +263,7 @@ const weatherBackgrounds = [
             theme: '#afd2e4'
         },
         night: {
-            src: '/images/N-light-snow.jpg',
+            src: 'images/N-light-snow.jpg',
             alt: 'Free Photo of Trees And Snow Covered Ground During Night Time Stock Photo',
             ref: [
                 'Martin Mariani',
