@@ -43,7 +43,7 @@ async function searchCity(city) {
     startLoading();
     removeError();
 
-    const link = `http://api.weatherapi.com/v1/current.json?key=e3b1dd72d6964d4187050305230608&q=${city}&aqi=no`;
+    const link = `https://api.weatherapi.com/v1/current.json?key=e3b1dd72d6964d4187050305230608&q=${city}&aqi=no`;
     await fetchWeather(link)
 
     .then(() => {
