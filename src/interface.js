@@ -22,6 +22,7 @@ const tooltip = document.querySelector('#tooltip');
 
 const backgroundContainer  = document.querySelector('.background');
 const dataMain = document.querySelector('.data-main');
+const backgroundSource = document.querySelector('.background-source');
 const temperature = dataMain.querySelector('#temperature');
 const city = dataMain.querySelector('#city');
 const weatherIcon = dataMain.querySelector('#weather-icon');
@@ -234,6 +235,7 @@ async function setAnimalBackground() {
         .then(picData => {
             const img = new Image();
             img.src = picData.src.large2x;
+            img.alt = picData.alt;
 
             const imageId = picData.id.toString();
             const localImageData = animalBackgrounds.find(bg => bg.id === imageId);
@@ -243,7 +245,10 @@ async function setAnimalBackground() {
                 imgData: localImageData
             }
     
-            img.onload = () => resolve(data);
+            img.onload = () => {
+                resolve(data);
+                updateImageSource(picData.photographer, picData.url);
+            }
             img.onerror = () => reject('Loading Animal Image Error'); 
         })
     
@@ -270,6 +275,9 @@ async function setAnimalBackground() {
 }
 
 function setWeatherBackground() {
+    let photographer;
+    let link;
+
     const weatherCode = dataCurrent.condition.code.toString();
     const imageData = weatherBackgrounds.find(data => data.code.includes(weatherCode));
     const img = new Image();
@@ -277,10 +285,12 @@ function setWeatherBackground() {
     if (dataCurrent.is_day === 1) {
         img.src = imageData.day.src;
         img.alt = imageData.day.alt;
+        [photographer, link] = [imageData.day.ref[0], imageData.day.ref[1]];
         setTheme('day', imageData);
     } else {
         img.src = imageData.night.src;
         img.alt = imageData.night.alt;
+        [photographer, link] = [imageData.night.ref[0], imageData.night.ref[1]];
         setTheme('night', imageData);
     }
 
@@ -289,6 +299,7 @@ function setWeatherBackground() {
     img.onload = () => {
         backgroundContainer.appendChild(img);
         hideImgLoading();
+        updateImageSource(photographer, link);
     }   
 }
 
@@ -305,6 +316,7 @@ function showMenu() {
     weatherSidebar.classList.add('weather-sidebar-hide');
     menu.classList.add('menu-hide');
     dataMain.classList.add('data-main-slide');
+    backgroundSource.classList.add('background-source-slide');
 
     menuModal.classList.add('menu-modal-show');
 }
@@ -313,6 +325,7 @@ function hideMenu() {
     weatherSidebar.classList.remove('weather-sidebar-hide');
     menu.classList.remove('menu-hide');
     dataMain.classList.remove('data-main-slide');
+    backgroundSource.classList.remove('background-source-slide');
 
     menuModal.classList.remove('menu-modal-show');
 }
@@ -326,6 +339,12 @@ function displayTooltip(e, text) {
 
 function hideTooltip() {
     tooltip.style.display = 'none';
+}
+
+function updateImageSource(photographer, link) {
+    const anchor = backgroundSource.querySelector('a');
+    anchor.textContent = photographer;
+    anchor.setAttribute('href', link);
 }
 
 const eventHandlers = (() => {
@@ -380,7 +399,7 @@ const eventHandlers = (() => {
     toggleBgBtn.addEventListener('mouseover', (e) => {
         e.target.dataset.activeBg === 'weather' ? 
         displayTooltip(e, 'set background to animals'):
-        displayTooltip(e, 'set background weather');
+        displayTooltip(e, 'set background to weather');
     });
 
     toggleBgBtn.addEventListener('mouseout', hideTooltip);

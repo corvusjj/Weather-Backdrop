@@ -428,3 +428,21 @@ body {
         opacity: 100%;
     }
 }
+
+.background-source {
+    position: absolute;
+    left: 120px;
+    bottom: 15px;
+    font-size: 0.8rem;
+    user-select: none;
+    transition: left 0.3s;
+    font-style: italic;
+}
+
+.background-source-slide {
+    left: 420px;
+}
+
+a#photographer {
+    color: inherit;
+}
