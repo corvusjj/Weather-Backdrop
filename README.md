@@ -1,6 +1,6 @@
 # Weather-App
 
-## [_Live Demo_](https://corvusjj.github.io/Weather-App/)
+## [_Live Demo_](https://corvusjj.github.io/Weather-Backdrop/)
 ### UI UX Design - [Arthur K](https://dribbble.com/shots/7118235-Weather-DailyUI-037)
 
 Based From [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app) Course. The task focuses on asynchronous code and working with APIs with javascript.
